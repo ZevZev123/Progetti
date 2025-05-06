@@ -56,7 +56,7 @@ if (__name__ == "__main__"):
 
 # Example SQL Queries:
 
-# DELECT FROM <tabella> WHERE <condizione>
+# DELETE FROM <tabella> WHERE <condizione>
 # INSERT INTO <tabella> (<colonna1>, <colonna2>, ...) VALUES (%s, %s, ...)
 # UPDATE <tabella> SET <colonna1> = %s, <colonna2> = %s WHERE <condizione>
 # SELECT * FROM <tabella> WHERE <condizione>

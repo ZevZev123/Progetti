@@ -1,38 +1,36 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>MAIN</title>
+<html lang="en" style="background-color: #272727; color: white;">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>MAIN</title>
 
-    <!-- barra di navigazione -->
-    <nav>
-        {% if username == None %}
-            <span class = "spacer"></span>
-            <ul>
-                <a href="{{ url_for('login') }}">Login</a>
-            </ul>
-        {% else %}
-            <span class = "welcome">Welcome {{ username }}</span>
-            <ul>
-                <a href="{{ url_for('logout') }}">Logout</a>
-            </ul>
-        {% endif %}
-    </nav>
-</head>
-<body>
-    {% for game in list %}
-        <h1>{{ game[0] }}</h1>
-        <p>{{ game[1] }}</p>
-        <p>Numero giocatori: {{ game[2] }}</p>
+        <!-- barra di navigazione -->
+        <nav style="height: 5%;">
+            {% if username == None %}
+                <span class = "spacer"></span>
+                <ul>
+                    <a style = "font-size: large;" href="{{ url_for('login') }}">Login</a>
+                </ul>
+            {% else %}
+                <span style = "font-size: x-large;" class = "welcome">Welcome {{ username }}</span>
+                <ul>
+                    <a style = "font-size: x-large;" href="{{ url_for('logout') }}">Logout</a>
+                </ul>
+            {% endif %}
+        </nav>
+    </head>
+    <body>
+        {% for game in list %}
+            <div class = "game-container">
+                <h1><a href = "{{ game[4] }}">{{ game[0] }}</a></h1>
+                <p>{{ game[1] }}</p>
+                <p>Numero giocatori: {{ game[2] }}</p>
 
-        <p><img class = "game-image" src = "{{ game[3] }}" alt = "{{ game[3] }}"/></p>
-        
-        {% if game[4] != None %}
-            <p><a href = "{{ game[4] }}">Link steam</a></p>
-        {% endif %}
-        
-        <br>
-    {% endfor %}
-</body>
+                <p><img class = "game-image" src = "{{ game[3] }}" alt = "{{ game[3] }}"/></p>
+                
+                <br>
+            </div>
+        {% endfor %}
+    </body>
 </html>

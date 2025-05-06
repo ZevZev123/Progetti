@@ -1,15 +1,32 @@
 .game-image {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 100%;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1 {
-    color: RED;
-    width: 30%;
+    width: 50%;
+    color: white;
+    text-align: center;
+}
+
+h1 a {
+    color: white;
+    text-decoration: none; /* Rimuove la sottolineatura */
+}
+h1 a:hover {
+    text-decoration: underline;
 }
 
 p {
-    width: 30%;
+    width: 50%;
+    color: white;
+    text-align: center;
 }
 
 nav {
