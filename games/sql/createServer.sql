@@ -1,6 +1,7 @@
 CREATE TABLE GIOCO (
 	nome VARCHAR(50) PRIMARY KEY,
     descrizione VARCHAR(255) NOT NULL,
+    piattaforma VARCHAR(50) NOT NULL,
     numgiocatorimassimi INT,
     immagine VARCHAR(50),
     link VARCHAR(100)

@@ -1,0 +1,49 @@
+.game-image {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+h1 {
+    color: RED;
+    width: 30%;
+}
+
+p {
+    width: 30%;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex; /* Usa il layout flessibile */
+    justify-content: space-between; /* Spaziatura tra gli elementi */
+    align-items: center; /* Allinea verticalmente gli elementi */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Dispone i link orizzontalmente */
+    gap: 15px; /* Spaziatura tra i link */
+}
+
+nav .welcome {
+    color: white;
+    font-weight: bold;
+}
+
+nav .spacer {
+    flex-grow: 1; /* Spinge gli elementi successivi a destra */
+}
+
+nav a {
+    color: white; /* Colore del testo */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    padding: 0 15px; /* Spaziatura tra i link */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+}

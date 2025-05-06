@@ -2,10 +2,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>MAIN</title>
+
+    <!-- barra di navigazione -->
+    <nav>
+        {% if username == None %}
+            <span class = "spacer"></span>
+            <ul>
+                <a href="{{ url_for('login') }}">Login</a>
+            </ul>
+        {% else %}
+            <span class = "welcome">Welcome {{ username }}</span>
+            <ul>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </ul>
+        {% endif %}
+    </nav>
 </head>
 <body>
-    {{ list[0][0] }} <br>
-    {{ list[0][1] }}
+    {% for game in list %}
+        <h1>{{ game[0] }}</h1>
+        <p>{{ game[1] }}</p>
+        <p>Numero giocatori: {{ game[2] }}</p>
+
+        <p><img class = "game-image" src = "{{ game[3] }}" alt = "{{ game[3] }}"/></p>
+        
+        {% if game[4] != None %}
+            <p><a href = "{{ game[4] }}">Link steam</a></p>
+        {% endif %}
+        
+        <br>
+    {% endfor %}
 </body>
 </html>
