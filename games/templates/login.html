@@ -1,19 +1,19 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
-    <title>LOG IN</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>LOG IN</title>
 
-    <nav>
-        <ul>
-            <a href="{{ url_for('main') }}">Home</a>
-        </ul>
-    </nav>
-</head>
-<body>
-    <box>
-        <h1>Log In</h1>
+        <nav>
+            <span class = "spacer"></span>
+            <ul>
+                <a href="{{ url_for('main') }}">Home</a>
+            </ul>
+        </nav>
+    </head>
+    <body>
+        <h1 style="text-align: unset;">Log In</h1>
         <form method="POST" action="{{ url_for('login') }}">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
@@ -27,6 +27,5 @@
         {% if error %}
             <p style="color: red;">{{ error }}</p>
         {% endif %}
-    </box>
-</body>
+    </body>
 </html>

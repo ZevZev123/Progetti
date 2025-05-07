@@ -1,0 +1,21 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>Document</title>
+        <nav>
+            <span class = "spacer"></span>
+            <ul>
+                <a href="{{ url_for('main') }}">Home</a>
+            </ul>
+        </nav>
+    </head>
+    <body>
+        {% if username == None %}
+            <h1 style="text-align: unset;">You don't have acces to this page</h1>
+        {% else %}
+            <h1 style="text-align: unset;">Welcome {{ username }}</h1>
+        {% endif %}
+    </body>
+</html>

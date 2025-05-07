@@ -60,3 +60,5 @@ if (__name__ == "__main__"):
 # INSERT INTO <tabella> (<colonna1>, <colonna2>, ...) VALUES (%s, %s, ...)
 # UPDATE <tabella> SET <colonna1> = %s, <colonna2> = %s WHERE <condizione>
 # SELECT * FROM <tabella> WHERE <condizione>
+
+# cur.execute("SELECT 1 FROM users WHERE name=%s AND pw=%s", (user, pw))

@@ -14,7 +14,7 @@ session = {'username': None}
 #     exit(1)
 
 listaGiochi = [('In Sound Mind', 'In Sound Mind is an imaginative first-person psychological horror with frenetic puzzles, unique boss fights, and original music by The Living Tombstone. Journey within the inner workings of the one place you can’t seem to escape—your own mind.', 1, '/static/gameImages/inSoundMind.jpg', 'https://store.steampowered.com/app/1119980/In_Sound_Mind/'),
-               ('The Dark Pictures Anthology: the devil in me', 'La troupe di un documentario riceve un misterioso invito a visitare la riproduzione del "Castello della morte" del serial killer H.H. Holmes. Presto scopriranno che qualcuno li sta osservando, e persino manipolando, e che le visualizzazioni dei loro video non sono l\'unica cosa di cui preoccuparsi!', 5, '/static/gameImages/theDevilInMe.jpg', 'https://store.steampowered.com/app/1567020/The_Dark_Pictures_Anthology_The_Devil_in_Me/'),]
+               ('The Dark Pictures Anthology: the devil in me', 'La troupe di un documentario riceve un misterioso invito a visitare la riproduzione del "Castello della morte" del serial killer H.H. Holmes. Presto scopriranno che qualcuno li sta osservando, e persino manipolando, e che le visualizzazioni dei loro video non sono l\'unica cosa di cui preoccuparsi!', 5, '/static/gameImages/theDevilInMe.jpg', 'https://store.steampowered.com/app/1567020/The_Dark_Pictures_Anthology_The_Devil_in_Me/')]
 
 listaUtenti = [('admin', 'admin'), ('zev', 'a')]
 
@@ -34,10 +34,20 @@ def login():
         password = request.form['password']
         if (username, password) in listaUtenti:
             session['username'] = username  # Salva l'utente nella sessione
+            # if (session['username'] == 'admin'):
+            #     return render_template('admin.html', list=listaGiochi, username=session['username'])
+            # else:
             return redirect(url_for('main'))
         else:
             return render_template('login.html', error="Invalid username or password.")
     return render_template('login.html')
+
+@server.route('/user', methods=['GET'])
+def user_page():
+    if (session['username'] == None or session['username'] == ''):
+        return render_template('user.html', username=None)
+    else:
+        return render_template('user.html', username=session['username'])
 
 @server.route('/logout', methods=['GET'])
 def logout():

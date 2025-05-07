@@ -6,16 +6,17 @@
         <title>MAIN</title>
 
         <!-- barra di navigazione -->
-        <nav style="height: 5%;">
+        <nav>
             {% if username == None %}
-                <span class = "spacer"></span>
+                <a class = "spacer"></a>
                 <ul>
-                    <a style = "font-size: large;" href="{{ url_for('login') }}">Login</a>
+                    <a href="{{ url_for('login') }}">Login</a>
                 </ul>
             {% else %}
-                <span style = "font-size: x-large;" class = "welcome">Welcome {{ username }}</span>
+                <a class = "welcome">Welcome {{ username }}</a>
                 <ul>
-                    <a style = "font-size: x-large;" href="{{ url_for('logout') }}">Logout</a>
+                    <a href = "{{ url_for('user_page', username=username) }}">Account</a>
+                    <a href = "{{ url_for('logout') }}">Logout</a>
                 </ul>
             {% endif %}
         </nav>

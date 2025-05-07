@@ -30,6 +30,7 @@ p {
 }
 
 nav {
+    height: 5%;
     background-color: #333;
     color: white;
     padding: 10px;
@@ -59,8 +60,8 @@ nav a {
     color: white; /* Colore del testo */
     text-decoration: none; /* Rimuove la sottolineatura */
     padding: 0 15px; /* Spaziatura tra i link */
+    font-size: x-large;
 }
-
 nav a:hover {
     text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
 }
